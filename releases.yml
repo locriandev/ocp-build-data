@@ -2197,3 +2197,10 @@ releases:
               exempt_rpms:
               - redhat-release*  # documents rhel release notes and concerns
               - tzdata
+        rpms:
+        - distgit_key: openshift-clients
+          why: Exclude the manual eng build
+          metadata:
+            is:
+              el9: openshift-clients-4.15.0-202405021207.p0.g7693229.assembly.stream.el9
+              el8: openshift-clients-4.15.0-202405021207.p0.g7693229.assembly.stream.el8
