@@ -3,8 +3,8 @@ content:
     dockerfile: Dockerfile
     git:
       branch:
-        target: release-{MAJOR}.{MINOR}
-      url: git@github.com:openshift-priv/ovn-kubernetes.git
+        target: bump-ovn24.09
+      url: git@github.com:dceara/ovn-kubernetes-1.git
       web: https://github.com/openshift/ovn-kubernetes
     ci_alignment:
       streams_prs:
