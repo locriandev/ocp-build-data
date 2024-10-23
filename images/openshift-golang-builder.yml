@@ -5,8 +5,8 @@ content:
     dockerfile: openshift-golang-builder.Dockerfile
     git:
       branch:
-        target: rhel-9-golang-1.22
-      url: git@github.com:openshift-eng/ocp-build-data.git
+        target: test-golang
+      url: git@github.com:locriandev/ocp-build-data.git
     modifications:
     - action: add
       doozer_source: golang_builder_FIPS_wrapper.sh
