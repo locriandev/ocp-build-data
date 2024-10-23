@@ -30,9 +30,5 @@ name: openshift/golang-builder
 owners:
 - aos-team-art@redhat.com
 
-# for CPaaS
-additional_tags:
-- 'rhel_9_golang_1.22'
-- 'rhel_9_1.22'
 maintainer:
   component: Release
