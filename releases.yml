@@ -66,15 +66,15 @@ releases:
       members:
         rpms: []
         images:
-          - distgit_key: local-storage-mustgather
+          - distgit_key: local-storage-operator
             exclude: true
-            why: "Excluding due to failing Konflux builds preventing bundle creation (ART-18158)"
-          - distgit_key: ose-frr
+            why: "Bundle build failing due to missing operand ose-local-storage-mustgather"
+          - distgit_key: ose-metallb-operator
             exclude: true
-            why: "Operand of ose-metallb-operator, Konflux build failing (ART-18158)"
-          - distgit_key: ose-must-gather
+            why: "Bundle build failing due to missing operand ose-frr"
+          - distgit_key: ose-support-log-gather-operator
             exclude: true
-            why: "Required by ose-support-log-gather-operator, Konflux build failing (ART-18158)"
+            why: "Bundle build failing due to missing operand ose-must-gather"
   4.20.19:
     assembly:
       type: standard
