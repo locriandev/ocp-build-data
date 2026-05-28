@@ -1176,6 +1176,8 @@ releases:
           component: rhcos
         - code: FAILED_CONSISTENCY_REQUIREMENT
           component: '*'
+        - code: MISMATCHED_SIBLINGS
+          component: '*'
       members:
         images:
           - distgit_key: '*'
