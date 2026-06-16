@@ -24,7 +24,7 @@ rhel-9-golang:
   mirror: false
   # Since mirror: false, an images/ci-openshift-golang-builder* metadata must push to this location.
   # upstream_image informs reconciliation PRs which upstream image to use for CI when this stream is referenced.
-  upstream_image: registry.ci.openshift.org/ocp/builder:rhel-9-golang-{GO_LATEST}-openshift-{MAJOR}.{MINOR}
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_rhel-9-golang-{GO_LATEST}-openshift-{MAJOR}.{MINOR}
 
 rhel-8-golang:
   aliases:
@@ -33,7 +33,7 @@ rhel-8-golang:
   mirror: false
   # Since mirror: false, an images/ci-openshift-golang-builder* metadata must push to this location.
   # upstream_image informs reconciliation PRs which upstream image to use for CI when this stream is referenced.
-  upstream_image: registry.ci.openshift.org/ocp/builder:rhel-8-golang-{GO_LATEST}-openshift-{MAJOR}.{MINOR}
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_rhel-8-golang-{GO_LATEST}-openshift-{MAJOR}.{MINOR}
 
 rhel-9-golang-1.25:
   aliases:
@@ -42,7 +42,7 @@ rhel-9-golang-1.25:
   mirror: false
   # Since mirror: false, an images/ci-openshift-golang-builder* metadata must push to this location.
   # upstream_image informs reconciliation PRs which upstream image to use for CI when this stream is referenced.
-  upstream_image: registry.ci.openshift.org/ocp/builder:rhel-9-golang-{GO_EXTRA}-openshift-{MAJOR}.{MINOR}
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_rhel-9-golang-{GO_EXTRA}-openshift-{MAJOR}.{MINOR}
 
 rhel-8-golang-1.25:
   aliases:
@@ -51,7 +51,7 @@ rhel-8-golang-1.25:
   mirror: false
   # Since mirror: false, an images/ci-openshift-golang-builder* metadata must push to this location.
   # upstream_image informs reconciliation PRs which upstream image to use for CI when this stream is referenced.
-  upstream_image: registry.ci.openshift.org/ocp/builder:rhel-8-golang-{GO_EXTRA}-openshift-{MAJOR}.{MINOR}
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_rhel-8-golang-{GO_EXTRA}-openshift-{MAJOR}.{MINOR}
 
 partner-rhel-8-golang-1.25:
   image: quay.io/redhat-user-workloads/ocp-art-tenant/art-images:golang-builder-v1.25.9-202604242241.p2.g2aa6a05.el8
@@ -90,37 +90,37 @@ rhel8:
   # it is important that we not build from unreleased builds and publish them.
   # ubi8-container-8.10-901.1717584420
   image: registry-proxy.engineering.redhat.com/rh-osbs/ubi8@sha256:143123d85045df426c5bbafc6863659880ebe276eb02c77ee868b88d08dbd05d
-  upstream_image: registry.ci.openshift.org/ocp/builder:rhel-8-openshift-{MAJOR}.{MINOR}.art
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_rhel-8-openshift-{MAJOR}.{MINOR}.art
   mirror: false
 
 rhel9:
   image: registry.redhat.io/rhel9-6-els/rhel-minimal@sha256:3f6763c6ffd939fa097f3051dcddd86a62c2df5f4c9a8046435293dac3b0d72c
-  upstream_image: registry.ci.openshift.org/ocp/builder:ubi9-minimal-openshift-{MAJOR}.{MINOR}.art
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_ubi9-minimal-openshift-{MAJOR}.{MINOR}.art
   mirror: false
 
 nodejs-rhel9:
   image: registry-proxy.engineering.redhat.com/rh-osbs/ubi9-nodejs-22:1-3
-  upstream_image: registry.ci.openshift.org/ocp/builder:rhel-9-openshift-nodejs-base-{MAJOR}.{MINOR}.art
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_rhel-9-openshift-nodejs-base-{MAJOR}.{MINOR}.art
   mirror: true
 
 centos_stream8:
   # Mirror the centos images so that okd_alignment can reference them in app.ci
   image: quay.io/centos/centos:stream8
-  upstream_image: registry.ci.openshift.org/ocp/builder:stream8
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_stream8
   mirror: true
   mirror_manifest_list: true
 
 centos_stream9:
   # Mirror the centos images so that okd_alignment can reference them in app.ci
   image: quay.io/centos/centos:stream9
-  upstream_image: registry.ci.openshift.org/ocp/builder:stream9
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_stream9
   mirror: true
   mirror_manifest_list: true
 
 centos_stream10:
   # Mirror the centos images so that okd_alignment can reference them in app.ci
   image: quay.io/centos/centos:stream10
-  upstream_image: registry.ci.openshift.org/ocp/builder:stream10
+  upstream_image: quay-proxy.ci.openshift.org/openshift/ci:ocp_builder_stream10
   mirror: true
   mirror_manifest_list: true
 
