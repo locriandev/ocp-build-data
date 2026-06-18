@@ -3,8 +3,9 @@ content:
     dockerfile: extensions/Containerfile
     git:
       branch:
-        target: release-{MAJOR}.{MINOR}
+        target: extensions-image
       url: git@github.com:openshift-priv/os.git
+      url_pull: https://github.com/locriandev/os
       web: https://github.com/openshift/os
     ci_alignment:
       streams_prs:
@@ -22,7 +23,7 @@ content:
       replacement: "RUN extensions/build.sh"
 distgit:
   branch: rhaos-{MAJOR}.{MINOR}-rhel-9
-  component: rhcos-node-image-extensions-container
+  component: rhcos-node-extensions-container
 enabled_repos:
 - rhel-9-baseos-rpms
 - rhel-9-appstream-rpms
@@ -37,7 +38,7 @@ from:
     - member: rhcos-node-image
     - member: openshift-enterprise-base-rhel9
   member: openshift-enterprise-base-rhel9
-name: openshift/rhcos-node-image-extensions-rhel9
+name: openshift/rhcos-node-extensions-rhel9
 owners:
 - aos-team-art@redhat.com
 canonical_builders_from_upstream: false
