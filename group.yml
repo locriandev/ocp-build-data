@@ -335,6 +335,8 @@ repos:
       enabled: false
 
   rhel-9-baseos-rpms:
+    scan_sources:
+      ignorable: true  # ART-14091: Prevent mass rebuilds from routine RHEL updates
     conf:
       extra_options:
         module_hotfixes: 1
@@ -357,6 +359,8 @@ repos:
       enabled: false
 
   rhel-9-appstream-rpms:
+    scan_sources:
+      ignorable: true  # ART-14091: Prevent mass rebuilds from routine RHEL updates
     conf:
       extra_options:
         module_hotfixes: 1
@@ -507,6 +511,8 @@ repos:
       enabled: true
 
   rhel-96-baseos:
+    scan_sources:
+      ignorable: true  # ART-14091: Prevent mass rebuilds from routine RHEL updates
     conf:
       baseurl:
         x86_64: https://rhsm-pulp.corp.redhat.com/content/e4s/rhel9/9.6/x86_64/baseos/os/
@@ -524,6 +530,8 @@ repos:
       enabled: false
 
   rhel-96-appstream:
+    scan_sources:
+      ignorable: true  # ART-14091: Prevent mass rebuilds from routine RHEL updates
     conf:
       baseurl:
         x86_64: https://rhsm-pulp.corp.redhat.com/content/e4s/rhel9/9.6/x86_64/appstream/os/
