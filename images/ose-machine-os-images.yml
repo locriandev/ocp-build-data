@@ -2,8 +2,9 @@ content:
   source:
     git:
       branch:
-        target: release-{MAJOR}.{MINOR}
+        target: fix/okd-stream-names
       url: git@github.com:openshift-priv/machine-os-images.git
+      url_pull: https://github.com/locriandev/machine-os-images
       web: https://github.com/openshift/machine-os-images
     okd_alignment:
       build_args:
