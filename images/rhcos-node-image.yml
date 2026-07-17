@@ -4,8 +4,8 @@ content:
     git:
       branch:
         target: release-{MAJOR}.{MINOR}
-      url: git@github.com:openshift-priv/os.git
-      web: https://github.com/openshift/os
+      url: git@github.com:locriandev/os.git
+      web: https://github.com/locriandev/os
     ci_alignment:
       streams_prs:
         enabled: false
