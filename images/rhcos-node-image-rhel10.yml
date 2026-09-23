@@ -53,7 +53,7 @@ enabled_repos:
 - rhel-102-appstream
 - rhel-102-fast-datapath
 for_payload: false
-for_release: false
+for_release: true
 from:
   stream: rhel_coreos10
 name: openshift/rhcos-node-image-rhel10
@@ -62,6 +62,5 @@ owners:
 canonical_builders_from_upstream: false
 konflux:
   image_repo: quay.io/redhat-user-workloads/ocp-art-tenant/art-rhcos-images
-  skip_validate_slsa: true
 okd:
   mode: disabled
