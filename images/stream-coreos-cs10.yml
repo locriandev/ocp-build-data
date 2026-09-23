@@ -42,13 +42,14 @@ content:
         RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/src/secret.repo \
             sed -i \
                 -e 's/dnf --repo="${YUM_REPO_NAMES}"/dnf --disablerepo=c10s-sig-virtualization/' \
-                -e '/^# XXX: For SCOS, only allow certain packages/,/^fi$/d' \
                 /tmp/art-build-node-image.sh && \
             bash /tmp/art-build-node-image.sh && \
             rm -f /tmp/art-build-node-image.sh
 distgit:
   branch: rhaos-{MAJOR}.{MINOR}-rhel-10
   component: stream-coreos-cs10-container
+enabled_repos:
+- rhel-10-server-ose-rpms
 for_payload: false
 for_release: false
 from:
