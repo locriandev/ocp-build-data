@@ -60,6 +60,9 @@ labels:
   distribution-scope: public
   url: "https://access.redhat.com/errata"
 name: openshift/rhcos-node-image-rhel10
+labels:
+  distribution-scope: public
+  url: "https://access.redhat.com/errata"
 owners:
 - aos-team-art@redhat.com
 canonical_builders_from_upstream: false
