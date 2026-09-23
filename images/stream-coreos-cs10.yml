@@ -18,6 +18,9 @@ content:
       match: "ARG OPENSHIFT_VERSION=overridden"
       replacement: "ARG OPENSHIFT_VERSION=5.0"
     - action: replace
+      match: "ARG YUM_REPO_NAMES=overridden"
+      replacement: "ARG YUM_REPO_NAMES=c10s-baseos,c10s-appstream,c10s-sig-nfv,c10s-sig-cloud-okd,rhel-10.2-server-ose-5.0"
+    - action: replace
       match: "ARG IMAGE_NAME"
       replacement: "ARG IMAGE_NAME="
     - action: replace
@@ -35,17 +38,6 @@ content:
     - action: replace
       match: "LABEL architecture=${TARGETARCH}"
       replacement: ""
-    - action: replace
-      match: 'RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/src/secret.repo /run/src/build-node-image.sh'
-      replacement: |
-        COPY build-node-image.sh /tmp/art-build-node-image.sh
-        RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/src/secret.repo \
-            sed -i \
-                -e 's/dnf --repo="${YUM_REPO_NAMES}"/dnf --disablerepo=c10s-sig-virtualization/' \
-                -e '/^# XXX: For SCOS, only allow certain packages/,/^fi$/d' \
-                /tmp/art-build-node-image.sh && \
-            bash /tmp/art-build-node-image.sh && \
-            rm -f /tmp/art-build-node-image.sh
 distgit:
   branch: rhaos-{MAJOR}.{MINOR}-rhel-10
   component: stream-coreos-cs10-container
