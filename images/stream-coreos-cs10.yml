@@ -19,7 +19,7 @@ content:
       replacement: "ARG OPENSHIFT_VERSION=5.0"
     - action: replace
       match: "ARG YUM_REPO_NAMES=overridden"
-      replacement: "ARG YUM_REPO_NAMES=c10s-baseos,c10s-appstream,c10s-sig-nfv,c10s-sig-cloud-okd,rhel-10-server-ose-rpms"
+      replacement: "ARG YUM_REPO_NAMES=c10s-baseos,c10s-appstream,c10s-sig-nfv,c10s-sig-cloud-okd"
     - action: replace
       match: "ARG IMAGE_NAME"
       replacement: "ARG IMAGE_NAME="
