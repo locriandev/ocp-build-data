@@ -1,0 +1,37 @@
+content:
+  source:
+    dockerfile: Containerfile
+    git:
+      branch:
+        target: main
+      url: git@github.com:openshift-priv/os.git
+      url_pull: git@github.com:locriandev/off-layering.git
+      web: https://github.com/locriandev/off-layering
+    ci_alignment:
+      streams_prs:
+        enabled: false
+      mirror: false
+distgit:
+  branch: rhaos-{MAJOR}.{MINOR}-rhel-10
+  component: rhcos-node-image-nvidia-container
+enabled_repos:
+- rhel-9-fast-datapath-rpms
+- rhel-9-server-ose-rpms
+- rhel-9-baseos-rpms
+- rhel-9-appstream-rpms
+for_payload: false
+for_release: false
+from:
+  stream: rhel_coreos_nv
+labels:
+  distribution-scope: public
+  url: "https://access.redhat.com/errata"
+name: openshift/rhcos-node-image-nvidia-rhel10
+owners:
+- aos-team-art@redhat.com
+canonical_builders_from_upstream: false
+konflux:
+  image_repo: quay.io/redhat-user-workloads/ocp-art-tenant/art-rhcos-images
+  skip_validate_slsa: true
+okd:
+  mode: disabled
