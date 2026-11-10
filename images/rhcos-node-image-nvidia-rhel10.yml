@@ -5,10 +5,10 @@ content:
     dockerfile: off-layering/nvidia/Containerfile
     git:
       branch:
-        target: pr/nvidia_merge
+        target: pr/5.0-nv
       url: git@github.com:openshift-priv/os.git
-      url_pull: git@github.com:adobes1/os.git
-      web: https://github.com/adobes1/os
+      url_pull: git@github.com:ravanelli/os.git
+      web: https://github.com/ravanelli/os
     ci_alignment:
       streams_prs:
         enabled: false
