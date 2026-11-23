@@ -2847,3 +2847,8 @@ releases:
                   # - libgcrypt
                   # - "openssl*"
                   # - "*libc*"
+          - distgit_key: driver-toolkit
+            why: Pin driver-toolkit to assembly
+            metadata:
+              is:
+                nvr: driver-toolkit-container-v4.22.0-202611181617.p2.g7aa4007.assembly.stream.el9
