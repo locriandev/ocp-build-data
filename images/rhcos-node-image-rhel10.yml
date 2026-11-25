@@ -35,10 +35,10 @@ content:
       match: "LABEL architecture=${TARGETARCH}"
       replacement: ""
     - action: replace
-      match: 'RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/src/secret.repo /run/src/build-node-image.sh'
+      match: 'RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/yumrepos.repo /run/src/build-node-image.sh'
       replacement: |
         COPY build-node-image.sh /tmp/art-build-node-image.sh
-        RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/src/secret.repo \
+        RUN --mount=type=bind,target=/run/src --mount=type=secret,id=yumrepos,target=/run/yumrepos.repo \
             sed -i \
                 -e 's/dnf --repo="${YUM_REPO_NAMES}"/dnf/' \
                 -e '/cat \/run\/src\/\*\.repo >> \/etc\/yum\.repos\.d\/git\.repo/a sed -i -E '\''/^\\[(c10s-[^]]+|rhel-[0-9]+\\.[0-9]+-server-ose-5\\.0)\\]$/,/^$/ s/^enabled=1/enabled=0/'\'' /etc/yum.repos.d/git.repo' \
