@@ -66,6 +66,12 @@ owners:
 - aos-team-art@redhat.com
 canonical_builders_from_upstream: false
 konflux:
+  cachi2:
+    lockfile:
+      rpms:
+      # Match libatomic already installed in the aarch64/ppc64le base.
+      # s390x pulls it in as an Open vSwitch dependency.
+      - libatomic-14.3.1-4.4.el10
   post_build: rhcos_node_image
   its:
     enabled: true
